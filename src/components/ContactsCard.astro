@@ -1,0 +1,52 @@
+---
+import Card from './Card/index.astro';
+import { LINKS } from '../lib/constants';
+import { Icon } from 'astro-icon/components';
+import Button from './Button.astro';
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
+    <div class="h-full">
+        <header class="flex items-center">
+            <h1 class="text-white text-xl font-bold">
+                ¿Quieres desarrollar tu producto con éxito? <b
+                    class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text"
+                    >Contáctame</b
+                >
+            </h1>
+        </header>
+        <address class="flex flex-col mt-4">
+            <h2 class="text-gray-500">Detalles de contacto</h2>
+            <p>hectormatgon@gmail.com</p>
+        </address>
+        <div class="flex flex-col mt-4 w-fit">
+            <h3>
+                🙌 Agenda una llamada de 15 minutos para hablar sobre tu
+                proyecto y tomar acción.
+            </h3>
+            <div
+                class="flex
+                gap-4
+                mt-4
+                items-left
+                flex-wrap
+                w-full"
+            >
+                <a
+                    href={LINKS.tidyCal}
+                    aria-label="tidyCal profile"
+                    target="_blank"
+                    class="flex flex-wrap"
+                >
+                    <Button aria-label="tidyCal profile">
+                        <Icon name="ri:calendar-fill" class="h-6" />
+                        <span class="sr-only">TidyCal</span>
+                    </Button>
+                    <span class="text-sm ml-4"
+                        >👈 Toma acción<br />👈 Dale click</span
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</Card>

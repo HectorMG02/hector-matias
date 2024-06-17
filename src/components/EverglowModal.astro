@@ -1,0 +1,85 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div
+    class="fixed inset-0 z-50 flex items-center justify-center"
+    id="everglowModal"
+>
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+    <div
+        class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full"
+    >
+        <div class="relative">
+            <img
+                src="/banner.jpg"
+                alt="Banner"
+                class="w-full h-48 object-cover"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"
+            >
+            </div>
+        </div>
+        <div class="px-6 py-4">
+            <button
+                id="closeButton"
+                class="absolute top-0 right-0 m-4 text-2xl text-gray-800"
+            >
+                <Icon name="ri:close-circle-line" class="h-6" />
+            </button>
+            <h2 class="text-xl font-bold text-gray-800">
+                🤩 He creado mi propia Agencia de Desarrollo para Startups
+            </h2>
+            <p class="mt-2 text-gray-600">
+                Hace unos meses fundé Everglow para ayudar a aquellos clientes
+                que necesitan <b class="font-bold"
+                    >algo más que una consultoría.</b
+                >
+            </p>
+            <p class="mt-2 text-gray-600">
+                En Everglow, <b class="font-bold"
+                    >destacamos en el desarrollo de SaaS, webs y apps móviles</b
+                >. Nuestra metodología <b class="font-bold">transparente</b> asegura
+                que cada proyecto se alinee perfectamente con tus expectativas, transformando
+                tus ideas en soluciones efectivas.
+            </p>
+            <div class="flex justify-center">
+                <a
+                    href="https://www.everglow.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <button
+                        class="bg-gradient-to-r from-[#E0A26A] to-indigo-300 text-white font-bold py-2 px-4 rounded mt-4
+                hover:text-white hover:font-bold hover:animate-pulse
+                    hover:scale-105 transition-all duration-300 ease-in-out"
+                    >
+                        ¿Quieres saber más?
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const closeButton = document.getElementById('closeButton');
+        const dialogBackdrop = document.getElementById('dialog-backdrop');
+        const dialog = document.getElementById('dialog');
+
+        closeButton?.addEventListener('click', () => {
+            dialogBackdrop?.classList.add('opacity-0', 'pointer-events-none');
+            dialogBackdrop?.classList.remove(
+                'opacity-100',
+                'pointer-events-auto'
+            );
+            dialog?.classList.add('opacity-0', '-translate-y-28', 'scale-90');
+            dialog?.classList.remove(
+                'opacity-100',
+                'translate-y-0',
+                'scale-100'
+            );
+        });
+    });
+</script>

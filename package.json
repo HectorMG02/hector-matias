@@ -10,8 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.10.3",
     "@astrojs/check": "^0.7.0",
-    "typescript": "^5.4.5"
+    "astro": "^4.10.3",
+    "astro-icon": "^1.1.0",
+    "iconify": "^1.4.0",
+    "@iconify-json/ri": "^1.1.20",
+    "mdast-util-to-string": "^4.0.0",
+    "motion": "^10.18.0",
+    "reading-time": "^1.5.0",
+    "solid-js": "^1.8.17",
+    "typescript": "^5.4.5",
+    "unocss": "^0.61.0"
   }
 }

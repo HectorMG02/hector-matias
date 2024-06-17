@@ -1,0 +1,76 @@
+---
+import Card from './Card/index.astro';
+import Button from './Button.astro';
+import { LINKS } from '../lib/constants';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+---
+
+<Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
+    <div class="flex w-full h-full">
+        <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
+            <div class="flex flex-col h-full">
+                <h6 class="text-sm font-light m-0 text-gray-500">Bienvenido</h6>
+                <p class="m-0 font-light text-xl">
+                    Hola, soy <b class="font-bold">Héctor Matías</b> y durante los
+                    últimos 6 años he trabajado desarrollando productos que empresas
+                    como <b class="font-bold"
+                        >Pc Componentes, Apple España, Media Markt, Leroy Merlin</b
+                    >, entre otras, utilizan a diario. <b class="font-bold"
+                        >Actualmente me dedico a la consultoría de software</b
+                    > para ayudar a startups a evitar cometer los errores más comunes
+                    y desarrollar así el producto que necesitan.
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <a
+                    href={LINKS.linkedin}
+                    aria-label="linkeding profile"
+                    target="_blank"
+                >
+                    <Button aria-label="linkedin profile">
+                        <Icon name="ri:linkedin-box-fill" class="h-6" />
+                        <span class="sr-only">Linkedin Profile</span>
+                    </Button>
+                </a>
+                <a
+                    href={LINKS.instagram}
+                    aria-label="instagram profile"
+                    target="_blank"
+                >
+                    <Button aria-label="instagram profile">
+                        <Icon name="ri:instagram-fill" class="h-6" />
+                        <span class="sr-only">Instagram</span>
+                    </Button>
+                </a>
+                <a
+                    href={LINKS.tiktok}
+                    aria-label="tiktok profile"
+                    target="_blank"
+                >
+                    <Button aria-label="tiktok profile">
+                        <Icon name="ri:tiktok-fill" class="h-6" />
+                        <span class="sr-only">TikTok</span>
+                    </Button>
+                </a>
+                <a
+                    href={LINKS.youtube}
+                    aria-label="youtube profile"
+                    target="_blank"
+                >
+                    <Button aria-label="youtube profile">
+                        <Icon name="ri:youtube-fill" class="h-6" />
+                        <span class="sr-only">YouTube</span>
+                    </Button>
+                </a>
+            </div>
+        </div>
+        <Image
+            width="300"
+            height="300"
+            src="/me.webp"
+            class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
+            alt="Foto de Héctor"
+        />
+    </div>
+</Card>
