@@ -15,12 +15,7 @@ interface Props {
     };
 }
 
-const { title, description, page, slug, frontmatter } = Astro.props;
-const image =
-    page === 'travel'
-        ? `${Astro.url.origin}/globe_preview.webp"`
-        : `${Astro.url.origin}/og-image.png`;
-
+const { title, description, page } = Astro.props;
 const schema = page !== 'blog' ? {} : {};
 ---
 
@@ -35,7 +30,11 @@ const schema = page !== 'blog' ? {} : {};
         <meta name="description" content={description} />
 
         <link rel="preconnect" href="https://cdn.fontshare.com" />
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+        <script
+            type="application/ld+json"
+            is:inline
+            set:html={JSON.stringify(schema)}
+        />
     </head>
     <body
         class="bg-darkslate-700 md:h-screen flex flex-col justify-center items-center"
