@@ -9,11 +9,13 @@ import EverglowModal from './EverglowModal.astro';
     colorText="text-neutral-900"
     classNames={'h-[80px!important]'}
 >
-    <div class="sm:h-[100px] h-full w-full absolute inset-0 cursor-pointer">
+    <div
+        class="sm:h-[100px] h-full w-full absolute cursor-pointer z-10 inset-0"
+        id="open-dialog"
+    >
         <img
             src="/everglow.jpeg"
             alt="Everglow"
-            id="open-dialog"
             class="object-cover w-full h-[80px]"
         />
     </div>
@@ -34,6 +36,7 @@ import EverglowModal from './EverglowModal.astro';
         const cancelButton = document.getElementById('cancel-button');
 
         openButton?.addEventListener('click', () => {
+            console.log('XXXX');
             dialogBackdrop?.classList.add('opacity-100', 'pointer-events-auto');
             dialogBackdrop?.classList.remove(
                 'opacity-0',
